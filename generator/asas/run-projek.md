@@ -35,6 +35,6 @@ kepada IDE.
 Untuk Eclipse, server akan update tiap-tiap kali kita save file.
 
 Untuk IntelliJ, server akan update apabila kita build aplikasi dengan klik ke
-gambar tukul warna hijau, seperti berikut,
+gambar tukul berwarna hijau, seperti berikut,
 
 ![Gambar tukul hijau untuk build aplikasi](img/tukul_hijau.png)
