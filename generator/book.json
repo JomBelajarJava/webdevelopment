@@ -1,0 +1,11 @@
+{
+    "title": "Belajar Web Development",
+    "author": "Burhanuddin Baharuddin",
+    "language": "ms",
+    "plugins": ["sitemap-general"],
+    "pluginsConfig": {
+        "sitemap-general": {
+            "prefix": "https://www.jombelajarjava.com/webdevelopment/"
+        }
+    }
+}
