@@ -33,13 +33,13 @@ terpapar di skrin.
 Sekarang kita cuba sesuatu yang lain sedikit. Kita akan menghantar code HTML ke
 browser. Tukar baris,
 
-```
+```java
 return "Hello, World!";
 ```
 
 ke
 
-```
+```java
 return "<h1>Hello, World!</h1>";
 ```
 
