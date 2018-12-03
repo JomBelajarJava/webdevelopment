@@ -43,7 +43,7 @@ ke
 return "<h1>Hello, World!</h1>";
 ```
 
-Setelah update, refresh browser dan kita nampak tulisan `Hello, World!` menjadi
-besar. Jadi, itulah web development secara keseluruhannya, tiada istimewanya
-berbanding aplikasi console, cuma perlu memanipulasi string ke format yang
-difahami oleh browser.
+Setelah update, refresh browser dan kita boleh nampak tulisan `Hello, World!`
+menjadi besar. Jadi, itulah web development secara keseluruhannya, tiada
+istimewanya berbanding aplikasi console, cuma perlu memanipulasi string ke
+format yang difahami oleh browser.
