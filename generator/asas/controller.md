@@ -27,3 +27,23 @@ public class GreetingController {
 
 Setelah update server, refresh browser dan kita boleh melihat `Hello, World!`
 terpapar di skrin.
+
+----
+
+Sekarang kita cuba sesuatu yang lain sedikit. Kita akan menghantar code HTML ke
+browser. Tukar baris,
+
+```
+return "Hello, World!";
+```
+
+ke
+
+```
+return "<h1>Hello, World!</h1>";
+```
+
+Setelah update, refresh browser dan kita nampak tulisan `Hello, World!` menjadi
+besar. Jadi, itulah web development secara keseluruhannya, tiada istimewanya
+berbanding aplikasi console, cuma perlu memanipulasi string ke format yang
+difahami oleh browser.
