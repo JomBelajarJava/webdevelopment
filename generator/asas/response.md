@@ -1,10 +1,7 @@
 # Response
 
-Dalam tutorial sebelum ini, saya ada menggunakan istilah request dan response.
-Request ialah segala maklumat yang datang daripada pengguna seperti browser
-mana, link apa, dan HTTP method mana yang digunakan. Response pula ialah
-maklumat yang kita ingin pulangkan kepada pengguna seperti jenis, status dan
-kandungan response tersebut.
+Response ialah maklumat yang kita ingin pulangkan kepada pengguna seperti jenis,
+status dan kandungan response tersebut.
 
 ## Jenis Response
 
@@ -13,13 +10,10 @@ Jika kita return String, kita akan memberi response dalam bentuk HTML secara
 default.
 
 ```java
-@RestController
-public class GreetingController {
     @GetMapping("/")
     public String greeting() {
         return "<h1>Hello, World!</h1>";
     }
-}
 ```
 
 Jika kita return object, kita akan memberi response dalam bentuk JSON.
