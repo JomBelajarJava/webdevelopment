@@ -1,3 +1,8 @@
+---
+date: 2018-12-03
+description: Routing berasal daripada perkataan route yang bermaksud laluan. Routing dalam aplikasi web bermaksud laluan untuk menggunakan fungsi yang mana.
+---
+
 # Routing
 
 Routing berasal daripada perkataan route yang bermaksud laluan. Routing dalam

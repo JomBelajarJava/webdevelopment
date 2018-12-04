@@ -1,3 +1,8 @@
+---
+date: 2018-12-03
+description: Menggunakan controller Spring Boot untuk berinteraksi dengan pengguna.
+---
+
 # Controller
 
 Struktur code untuk aplikasi web sama sahaja seperti yang kita lihat di

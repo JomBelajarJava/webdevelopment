@@ -1,3 +1,8 @@
+---
+date: 2018-12-03
+description: Response ialah maklumat yang kita ingin pulangkan kepada pengguna seperti jenis, status dan kandungan response tersebut.
+---
+
 # Response
 
 Response ialah maklumat yang kita ingin pulangkan kepada pengguna seperti jenis,

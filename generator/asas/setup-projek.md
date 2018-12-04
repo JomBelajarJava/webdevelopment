@@ -1,3 +1,8 @@
+---
+date: 2018-12-03
+description: Setup projek untuk Spring Boot menggunakan build tool Maven atau Gradle.
+---
+
 # Setup Projek
 
 Seperti projek Java yang lain, kita boleh menggunakan build tool seperti Maven

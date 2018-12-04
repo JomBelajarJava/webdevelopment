@@ -1,3 +1,8 @@
+---
+date: 2018-12-04
+description: Request ialah segala maklumat yang datang daripada pengguna seperti browser mana, link apa, dan HTTP method mana yang digunakan.
+---
+
 # Request
 
 Request ialah segala maklumat yang datang daripada pengguna seperti browser
