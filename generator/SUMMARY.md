@@ -12,3 +12,4 @@
     * [Autowire](asas/autowire.md)
 
 * [Spring MVC](springmvc/README.md)
+    * [Template Engine](springmvc/template-engine.md)
