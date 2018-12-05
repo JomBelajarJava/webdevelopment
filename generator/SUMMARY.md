@@ -14,3 +14,4 @@
 * [Spring MVC](springmvc/README.md)
     * [Template Engine](springmvc/template-engine.md)
     * [Controller MVC](springmvc/controller-mvc.md)
+    * [Model](springmvc/model.md)
