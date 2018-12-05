@@ -34,8 +34,9 @@ Maka, `return "greeting"` di atas bermaksud gunakan file template `greeting`
 untuk menghantar code HTML.
 
 File template boleh diletakkan di dalam folder `src/main/resources/templates`.
-Contoh file template dengan nama `greeting.mustache` (file extension bergantung
-kepada template engine yang anda pilih, rujuk documentation):
+Berikut adalah contoh file template dengan nama `greeting.mustache` (file
+extension bergantung kepada template engine yang anda pilih, rujuk
+documentation):
 
 ```html
 <!DOCTYPE html>
