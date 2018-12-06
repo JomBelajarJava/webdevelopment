@@ -9,4 +9,9 @@
 <url> <loc>https://www.jombelajarjava.com/webdevelopment/asas/request.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jombelajarjava.com/webdevelopment/asas/response.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jombelajarjava.com/webdevelopment/asas/autowire.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jombelajarjava.com/webdevelopment/springmvc/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jombelajarjava.com/webdevelopment/springmvc/template-engine.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jombelajarjava.com/webdevelopment/springmvc/controller-mvc.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jombelajarjava.com/webdevelopment/springmvc/model.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jombelajarjava.com/webdevelopment/springmvc/mustache.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
