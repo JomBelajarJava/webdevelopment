@@ -5,8 +5,8 @@ description: Dalam tutorial yang lepas, kita ada membuat form untuk login. Sekar
 
 # Form
 
-Dalam tutorial yang lepas, kita ada membuat form untuk login. Sekarang kita akan
-melihat bagaimana untuk mengambil input tersebut.
+Dalam [tutorial Mustache](mustache.md), kita ada membuat form untuk login.
+Sekarang kita akan melihat bagaimana untuk mengambil input tersebut.
 
 Semasa menghantar form, konsepnya sama seperti menghantar request body, cuma
 dalam format yang berbeza. Untuk mengambil input daripada form, kita perlu
