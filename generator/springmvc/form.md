@@ -39,6 +39,12 @@ Kemudian tambah method pada controller untuk mengambil input, seperti berikut,
     }
 ```
 
+Path dan HTTP method perlu sama dengan code HTML untuk form tersebut, iaitu,
+
+```html
+<form action="/login" method="POST">
+```
+
 Untuk test controller, kita bina satu page untuk memaparkan username.
 
 Edit `page.mustache` untuk page dashboard:
