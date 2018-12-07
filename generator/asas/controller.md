@@ -6,10 +6,11 @@ description: Menggunakan controller Spring Boot untuk berinteraksi dengan penggu
 # Controller
 
 Struktur code untuk aplikasi web sama sahaja seperti yang kita lihat di
-[tutorial database](../java/database/). Cuma satu yang saya tidak beritahu dalam
-tutorial tersebut ialah controller. Dalam tutorial database, controller untuk
-code tersebut ialah di bahagian pengambilan input. Maksudnya, controller ialah
-bahagian code yang mengawal interaksi dengan pengguna.
+[tutorial database](https://www.jombelajarjava.com/java/database/). Cuma satu
+yang saya tidak beritahu dalam tutorial tersebut ialah controller. Dalam
+tutorial database, controller untuk code tersebut ialah di bahagian pengambilan
+input. Maksudnya, controller ialah bahagian code yang mengawal interaksi dengan
+pengguna.
 
 Sekarang kita cuba membuat controller untuk memaparkan `Hello, World!` di
 browser. Create class baru dengan nama `GreetingController` dengan kandungan
