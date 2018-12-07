@@ -15,4 +15,5 @@
 <url> <loc>https://www.jombelajarjava.com/webdevelopment/springmvc/model.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jombelajarjava.com/webdevelopment/springmvc/mustache.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jombelajarjava.com/webdevelopment/springmvc/form.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jombelajarjava.com/webdevelopment/springmvc/redirect.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>

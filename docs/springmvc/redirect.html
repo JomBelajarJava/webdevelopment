@@ -4,9 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Model · Belajar Web Development</title>
+        <title>Redirect · Belajar Web Development</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="Sekarang kita akan cuba memasukkan data daripada code Java ke template dengan menambah parameter Model untuk method controller berkenaan.">
+        <meta name="description" content="Redirect ialah cara browser menghantar pengguna ke page yang lain. Dengan menggunakan Spring MVC, kita ada dua pilihan untuk membuat redirect.">
         <meta name="generator" content="GitBook 3.2.3">
         <meta name="author" content="Burhanuddin Baharuddin">
         
@@ -68,10 +68,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="mustache.html" />
     
-    
-    <link rel="prev" href="controller-mvc.html" />
+    <link rel="prev" href="form.html" />
     
 
     </head>
@@ -263,7 +261,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.3" data-path="model.html">
+        <li class="chapter " data-level="1.3.3" data-path="model.html">
             
                 <a href="model.html">
             
@@ -302,7 +300,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="redirect.html">
+        <li class="chapter active" data-level="1.3.6" data-path="redirect.html">
             
                 <a href="redirect.html">
             
@@ -350,7 +348,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Model</a>
+        <a href=".." >Redirect</a>
     </h1>
 </div>
 
@@ -365,49 +363,80 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="model">Model</h1>
-<p>Sekarang kita akan cuba memasukkan data daripada code Java ke template. Caranya
-dengan menambah parameter <code>Model</code> untuk method controller berkenaan, kemudian
-gunakan method daripada class <code>Model</code> untuk memasukkan data. Contohnya,</p>
-<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.jombelajarjava.hello;
-
-<span class="hljs-keyword">import</span> org.springframework.stereotype.Controller;
-<span class="hljs-keyword">import</span> org.springframework.ui.Model;
-<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.GetMapping;
-
-<span class="hljs-meta">@Controller</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GreetingController</span> </span>{
-    <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/&quot;</span>)
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">greeting</span><span class="hljs-params">(Model model)</span> </span>{
-        model.addAttribute(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;Mike Tyson&quot;</span>);
-        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;greeting&quot;</span>;
-    }
-}
+                                <h1 id="redirect">Redirect</h1>
+<p>Dalam <a href="form.html">tutorial Form</a>, selepas login, cuba klik Refresh pada browser.
+Browser kemudian akan bertanya sama ada ingin menghantar form semula ataupun
+tidak. Ada sesetengah masa, kita tidak mahu menghantar form semula. Untuk itu,
+kita boleh menggunakan <em>redirect</em>.</p>
+<p>Redirect ialah cara browser menghantar pengguna ke page yang lain. Dengan
+menggunakan Spring MVC, kita ada dua pilihan untuk membuat redirect. Kita akan
+melihat kedua-dua cara tersebut.</p>
+<p>Sebelum itu, kita edit dahulu page Dashboard kerana kita masih tiada akses ke
+username.</p>
+<p>File <code>dashboard.mustache</code>:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Selamat datang ke Dashboard!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-<p>Kita boleh menggunakan syntax template untuk memaparkan data tersebut. Contoh
-untuk template Mustache adalah dengan menggunakan <code>{{</code> dan <code>}}</code>, seperti
-berikut,</p>
+<p>dan tambah controller untuk melihat page tersebut:</p>
+<pre><code class="lang-java">    <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/dashboard&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">dashboard</span><span class="hljs-params">(Model model)</span> </span>{
+        model.addAttribute(<span class="hljs-string">&quot;title&quot;</span>, <span class="hljs-string">&quot;Dashboard&quot;</span>);
+        model.addAttribute(<span class="hljs-string">&quot;dashboard&quot;</span>, <span class="hljs-keyword">true</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;page&quot;</span>;
+    }
+</code></pre>
+<p>Sekarang kita akan melihat cara untuk redirect ke page Dashboard setelah login.</p>
+<h2 id="meta-refresh">Meta refresh</h2>
+<p>Cara yang pertama adalah dengan menambah meta pada HTML, iaitu,</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;refresh&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;3; url=/dashboard&quot;</span>&gt;</span>
+</code></pre>
+<p>Meta di atas bermaksud redirect ke <code>/dashboard</code> selepas 3 saat. Kita boleh
+menambah message untuk memberitahu pengguna bahawa mereka akan redirect ke page
+Dashboard. Sebagai contoh, kita bina file <code>login_success.mustache</code>:</p>
 <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Website Hello<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;refresh&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;3; url=/dashboard&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Website Hello<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Selamat datang, {{name}}!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Anda telah berjaya login.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Anda akan dihantar ke Dashboard dalam masa 3 saat.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-<p>Layari <code>localhost:8080</code> untuk test controller.</p>
-<p>Parameter yang lain boleh sahaja ditambah pada method tersebut, contohnya jika
-kita ingin mengambil parameter, seperti berikut,</p>
-<pre><code class="lang-java">    <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/&quot;</span>)
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">greeting</span><span class="hljs-params">(@RequestParam String name, Model model)</span> </span>{
-        model.addAttribute(<span class="hljs-string">&quot;name&quot;</span>, name);
-        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;greeting&quot;</span>;
+<p>Untuk controller, kita paparkan page <code>login_success.mustache</code> setelah berjaya
+login, jika gagal kita paparkan login form semula. Contohnya,</p>
+<pre><code class="lang-java">    <span class="hljs-meta">@PostMapping</span>(<span class="hljs-string">&quot;/login&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">authenticate</span><span class="hljs-params">(@ModelAttribute LoginForm loginForm, Model model)</span> </span>{
+        <span class="hljs-keyword">boolean</span> success = loginForm.getUsername().equals(<span class="hljs-string">&quot;admin&quot;</span>) &amp;&amp;
+                loginForm.getPassword().equals(<span class="hljs-string">&quot;admin&quot;</span>);
+
+        <span class="hljs-keyword">if</span> (success) {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;login_success&quot;</span>;
+        }
+
+        <span class="hljs-keyword">return</span> login(model);
     }
 </code></pre>
-<p>Layari <code>localhost:8080/?name=Mike Tyson</code> untuk test method tersebut.</p>
+<h2 id="redirect">redirect:</h2>
+<p>Cara yang kedua adalah dengan menggunakan cara redirect daripada Spring MVC,
+iaitu dengan memulangkan string bermula <code>&quot;redirect:&quot;</code> kemudian url page. Contohnya,</p>
+<pre><code class="lang-java">    <span class="hljs-meta">@PostMapping</span>(<span class="hljs-string">&quot;/login&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">authenticate</span><span class="hljs-params">(@ModelAttribute LoginForm loginForm, Model model)</span> </span>{
+        <span class="hljs-keyword">boolean</span> success = loginForm.getUsername().equals(<span class="hljs-string">&quot;admin&quot;</span>) &amp;&amp;
+                loginForm.getPassword().equals(<span class="hljs-string">&quot;admin&quot;</span>);
+
+        <span class="hljs-keyword">if</span> (success) {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;redirect:/dashboard&quot;</span>;
+        }
+
+        <span class="hljs-keyword">return</span> login(model);
+    }
+</code></pre>
+<p>Dengan cara ini, pengguna akan terus ke page dashboard. Cuba refresh browser
+setelah berjaya login.</p>
 
                                 
                                 </section>
@@ -435,14 +464,10 @@ kita ingin mengambil parameter, seperti berikut,</p>
 
             
                 
-                <a href="controller-mvc.html" class="navigation navigation-prev " aria-label="Previous page: Controller MVC">
+                <a href="form.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Form">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="mustache.html" class="navigation navigation-next " aria-label="Next page: Mustache">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -451,7 +476,7 @@ kita ingin mengambil parameter, seperti berikut,</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"date":"2018-12-05T00:00:00.000Z","description":"Sekarang kita akan cuba memasukkan data daripada code Java ke template dengan menambah parameter Model untuk method controller berkenaan.","title":"Model","level":"1.3.3","depth":2,"next":{"title":"Mustache","level":"1.3.4","depth":2,"path":"springmvc/mustache.md","ref":"springmvc/mustache.md","articles":[]},"previous":{"title":"Controller MVC","level":"1.3.2","depth":2,"path":"springmvc/controller-mvc.md","ref":"springmvc/controller-mvc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","pageload-analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sitemap-general":{"prefix":"https://www.jombelajarjava.com/webdevelopment/"},"pageload-analytics":{"token":"UA-64328787-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Burhanuddin Baharuddin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Belajar Web Development","language":"ms","gitbook":"*"},"file":{"path":"springmvc/model.md","mtime":"2018-12-05T08:44:50.101Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-07T09:15:36.232Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"date":"2018-12-07T00:00:00.000Z","description":"Redirect ialah cara browser menghantar pengguna ke page yang lain. Dengan menggunakan Spring MVC, kita ada dua pilihan untuk membuat redirect.","title":"Redirect","level":"1.3.6","depth":2,"previous":{"title":"Form","level":"1.3.5","depth":2,"path":"springmvc/form.md","ref":"springmvc/form.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","pageload-analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sitemap-general":{"prefix":"https://www.jombelajarjava.com/webdevelopment/"},"pageload-analytics":{"token":"UA-64328787-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Burhanuddin Baharuddin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Belajar Web Development","language":"ms","gitbook":"*"},"file":{"path":"springmvc/redirect.md","mtime":"2018-12-07T09:13:56.742Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-07T09:15:36.232Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
