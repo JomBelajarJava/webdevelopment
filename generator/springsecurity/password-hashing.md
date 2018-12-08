@@ -82,13 +82,13 @@ Sekarang kita akan melihat penjelasan mengenai code di atas. Kepada sesiapa yang
 sudah faham, boleh skip bahagian ini.
 
 Cryptography ialah pembelajaran mengenai teknik untuk menukar sesuatu data ke
-dalam bentuk yang lain dengan tujuan supaya orang yang tidak berkenaan tidak
-dapat melihat data tersebut. Dalam cryptography, ada dua kategori, encryption
-dan hashing.
+dalam bentuk yang lain dengan tujuan supaya orang lain yang tidak berkenaan
+tidak dapat memahami data tersebut. Dalam cryptography, ada dua kategori,
+iaitu encryption dan hashing.
 
 Encryption ialah menukar data ke bentuk yang lain, dan hasilnya juga boleh
 bertukar ke bentuk yang asal (*decryption*). Hashing pula ialah menukar data ke
-bentuk yang lain, tetapi hasilnya tidak dapat bertukar ke bentuk asal.
+bentuk yang lain sehingga tidak boleh lagi bertukar ke bentuk yang asal.
 
 Dalam code di atas, kita menggunakan BCrypt, iaitu salah satu algorithm untuk
 membuat hashing. Tujuan kita menggunakan hash untuk password adalah supaya
