@@ -48,7 +48,8 @@ Jika anda menggunakan template engine yang lain, anda boleh terus mendapatkan
 token dalam template. Disebabkan kita menggunakan Mustache untuk tutorial ini,
 maka kita perlu menghantar token tersebut menggunakan model.
 
-Berikut ialah template untuk meletakkan token (`anti_forgery_field.mustache`):
+Berikut ialah template untuk meletakkan token dalam file
+`anti_forgery_field.mustache`:
 
 ```html
 {{#_csrf}}
