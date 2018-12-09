@@ -4,9 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Run Projek · Belajar Web Development</title>
+        <title>Authorization · Belajar Web Development</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="Run projek Spring Boot menggunakan command daripada build tool Maven atau Gradle.">
+        <meta name="description" content="Authorization ialah proses untuk memberi akses kepada ahli website. Kita akan menggunakan fungsi authorization daripada Spring Security.">
         <meta name="generator" content="GitBook 3.2.3">
         <meta name="author" content="Burhanuddin Baharuddin">
         
@@ -68,10 +68,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="controller.html" />
     
-    
-    <link rel="prev" href="setup-projek.html" />
+    <link rel="prev" href="authentication.html" />
     
 
     </head>
@@ -113,9 +111,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../asas/">
             
-                <a href="./">
+                <a href="../asas/">
             
                     
                     Asas
@@ -127,9 +125,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="setup-projek.html">
+        <li class="chapter " data-level="1.2.1" data-path="../asas/setup-projek.html">
             
-                <a href="setup-projek.html">
+                <a href="../asas/setup-projek.html">
             
                     
                     Setup Projek
@@ -140,9 +138,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="run-projek.html">
+        <li class="chapter " data-level="1.2.2" data-path="../asas/run-projek.html">
             
-                <a href="run-projek.html">
+                <a href="../asas/run-projek.html">
             
                     
                     Run Projek
@@ -153,9 +151,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="controller.html">
+        <li class="chapter " data-level="1.2.3" data-path="../asas/controller.html">
             
-                <a href="controller.html">
+                <a href="../asas/controller.html">
             
                     
                     Controller
@@ -166,9 +164,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="routing.html">
+        <li class="chapter " data-level="1.2.4" data-path="../asas/routing.html">
             
-                <a href="routing.html">
+                <a href="../asas/routing.html">
             
                     
                     Routing
@@ -179,9 +177,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="request.html">
+        <li class="chapter " data-level="1.2.5" data-path="../asas/request.html">
             
-                <a href="request.html">
+                <a href="../asas/request.html">
             
                     
                     Request
@@ -192,9 +190,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="response.html">
+        <li class="chapter " data-level="1.2.6" data-path="../asas/response.html">
             
-                <a href="response.html">
+                <a href="../asas/response.html">
             
                     
                     Response
@@ -205,9 +203,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="autowire.html">
+        <li class="chapter " data-level="1.2.7" data-path="../asas/autowire.html">
             
-                <a href="autowire.html">
+                <a href="../asas/autowire.html">
             
                     
                     Autowire
@@ -320,9 +318,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../springsecurity/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../springsecurity/">
+                <a href="./">
             
                     
                     Spring Security
@@ -334,9 +332,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../springsecurity/password-hashing.html">
+        <li class="chapter " data-level="1.4.1" data-path="password-hashing.html">
             
-                <a href="../springsecurity/password-hashing.html">
+                <a href="password-hashing.html">
             
                     
                     Password Hashing
@@ -347,9 +345,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../springsecurity/csrf.html">
+        <li class="chapter " data-level="1.4.2" data-path="csrf.html">
             
-                <a href="../springsecurity/csrf.html">
+                <a href="csrf.html">
             
                     
                     CSRF
@@ -360,9 +358,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../springsecurity/authentication.html">
+        <li class="chapter " data-level="1.4.3" data-path="authentication.html">
             
-                <a href="../springsecurity/authentication.html">
+                <a href="authentication.html">
             
                     
                     Authentication
@@ -373,9 +371,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../springsecurity/authorization.html">
+        <li class="chapter active" data-level="1.4.4" data-path="authorization.html">
             
-                <a href="../springsecurity/authorization.html">
+                <a href="authorization.html">
             
                     
                     Authorization
@@ -421,7 +419,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Run Projek</a>
+        <a href=".." >Authorization</a>
     </h1>
 </div>
 
@@ -436,28 +434,75 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="run-projek">Run Projek</h1>
-<p>Kita boleh menggunakan command build tool untuk run projek Spring Boot.</p>
-<p>Jika anda menggunakan Maven, taip</p>
-<pre><code>mvn spring-boot:run
-</code></pre><p>Jika anda menggunakan Gradle, taip</p>
-<pre><code>gradle bootRun
-</code></pre><p>Kemudian console akan memaparkan segala log semasa menjalankan server. Setelah
-selesai, kita boleh mencari tulisan seperti ini,</p>
-<pre><code>Tomcat initialized with port(s): 8080 (http)
-</code></pre><p>Perhatikan nombor 8080 tersebut. Itu merupakan port untuk server yang kita telah
-run. Untuk melihat web tersebut, buka browser kemudian pergi ke
-<code>localhost:8080</code>. Anda akan melihat error page kerana kita masih belum menulis
-apa-apa lagi.</p>
-<p>Jika anda masih ingat, sebelum ini kita anda menambah dependency &apos;Devtools&apos;.
-Dengan adanya Devtools, code yang kita akan tulis nanti akan terus update pada
-server. Jadi, kita tidak perlu lagi tutup, kemudian compile semula aplikasi
-seperti aplikasi Java yang lain. Walau bagaimanapun, feature ini bergantung
-kepada IDE.</p>
-<p>Untuk Eclipse, server akan update tiap-tiap kali kita save file.</p>
-<p>Untuk IntelliJ, server akan update apabila kita build aplikasi dengan klik ke
-gambar tukul berwarna hijau, seperti berikut,</p>
-<p><img src="img/tukul_hijau.png" alt="Gambar tukul hijau untuk build aplikasi"></p>
+                                <h1 id="authorization">Authorization</h1>
+<p>Dalam <a href="authentication.html">tutorial Authentication</a>, walaupun tidak log in,
+pengguna masih boleh melayari page dashboard. Untuk menyekat akses pengguna yang
+tidak log in, kita boleh menggunakan fungsi authorization daripada Spring
+Security. Authorization ialah proses untuk memberi akses kepada ahli website.</p>
+<p>Kita boleh configure authorization dalam method <code>configure()</code> sama seperti
+authentication. Kita tambah seperti berikut:</p>
+<pre><code class="lang-java">    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configure</span><span class="hljs-params">(HttpSecurity http)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        http
+                .formLogin()
+                .loginPage(<span class="hljs-string">&quot;/login&quot;</span>)
+                .defaultSuccessUrl(<span class="hljs-string">&quot;/dashboard&quot;</span>)
+                .and()
+                .logout()
+                .and()
+                .authorizeRequests()
+                .antMatchers(<span class="hljs-string">&quot;/dashboard/**&quot;</span>).authenticated()
+                .antMatchers(<span class="hljs-string">&quot;/admin/**&quot;</span>).hasRole(<span class="hljs-string">&quot;ADMIN&quot;</span>);
+    }
+</code></pre>
+<p>Selepas configure authentication, kita panggil method <code>and()</code> untuk configure
+bahagian lain dan pilih <code>authorizeRequests()</code> untuk configure authorization.
+Kemudian kita menggunakan <code>antMatchers()</code> untuk memilih path mana yang perlu
+disekat, jadi kita tulis <code>&quot;/dashboard/**&quot;</code> yang bermaksud mana-mana path yang
+bermula dengan <code>/dashboard</code>. Kemudian kita panggil method <code>authenticated()</code>
+untuk path tersebut menandakan hanya pengguna yang login sahaja yang boleh
+akses.</p>
+<p>Setelah selesai, anda boleh cuba logout, kemudian layari
+<code>localhost:8080/dashboard</code> dan website akan redirect anda ke page login.</p>
+<h2 id="role">Role</h2>
+<p>Jika anda perhatikan dalam <a href="authentication.html">tutorial Authentication</a>, semasa
+kita membuat pengguna untuk demo, kita ada meletakkan role. Semasa menggunakan
+website, bukan semua ahli boleh akses ke semua page. Ada ahli yang berperanan
+sebagai admin, ada yang ahli berbayar, dan ada ahli biasa. Maka kita boleh
+menggunakan role untuk membezakan kumpulan-kumpulan ini.</p>
+<p>Sekarang kita cuba membuat page yang khas untuk admin sahaja. Kandungan page
+terpulang kepada anda. Controller untuk page adalah seperti berikut:</p>
+<pre><code class="lang-java">    <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/admin&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">admin</span><span class="hljs-params">(Model model)</span> </span>{
+        <span class="hljs-keyword">return</span> render(model, <span class="hljs-string">&quot;admin&quot;</span>, <span class="hljs-string">&quot;Admin&quot;</span>);
+    }
+</code></pre>
+<p>Kita juga akan membuat satu lagi pengguna biasa untuk melihat sama ada dia boleh
+mengakses page admin.</p>
+<pre><code class="lang-java">        UserDetails admin = ...
+
+        UserDetails pleb =
+                User.withUsername(<span class="hljs-string">&quot;user&quot;</span>)
+                        .password(<span class="hljs-string">&quot;password&quot;</span>)
+                        .roles(<span class="hljs-string">&quot;USER&quot;</span>)
+                        .passwordEncoder(passwordEncoder::encode)
+                        .build();
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> InMemoryUserDetailsManager(admin, pleb);
+</code></pre>
+<p>Perhatikan role untuk pengguna tersebut berbeza dengan admin.</p>
+<p>Untuk menyekat akses untuk page admin, kita boleh menambah path yang lain
+menggunakan <code>antMatchers()</code> kemudian guna method <code>hasRole()</code>, seperti berikut:</p>
+<pre><code class="lang-java">                ...
+                .and()
+                .authorizeRequests()
+                .antMatchers(<span class="hljs-string">&quot;/dashboard/**&quot;</span>).authenticated()
+                .antMatchers(<span class="hljs-string">&quot;/admin/**&quot;</span>).hasRole(<span class="hljs-string">&quot;ADMIN&quot;</span>);
+                ...
+</code></pre>
+<p>Setelah selesai, cuba login sebagai pengguna biasa, dan layari
+<code>localhost:8080/admin</code> dan page akan memaparkan &apos;<em>forbidden</em>&apos;.</p>
+<p>Pengguna juga boleh memiliki lebih daripada satu role.</p>
 
                                 
                                 </section>
@@ -485,14 +530,10 @@ gambar tukul berwarna hijau, seperti berikut,</p>
 
             
                 
-                <a href="setup-projek.html" class="navigation navigation-prev " aria-label="Previous page: Setup Projek">
+                <a href="authentication.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Authentication">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="controller.html" class="navigation navigation-next " aria-label="Next page: Controller">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -501,7 +542,7 @@ gambar tukul berwarna hijau, seperti berikut,</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"date":"2018-12-03T00:00:00.000Z","description":"Run projek Spring Boot menggunakan command daripada build tool Maven atau Gradle.","title":"Run Projek","level":"1.2.2","depth":2,"next":{"title":"Controller","level":"1.2.3","depth":2,"path":"asas/controller.md","ref":"asas/controller.md","articles":[]},"previous":{"title":"Setup Projek","level":"1.2.1","depth":2,"path":"asas/setup-projek.md","ref":"asas/setup-projek.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","pageload-analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sitemap-general":{"prefix":"https://www.jombelajarjava.com/webdevelopment/"},"pageload-analytics":{"token":"UA-64328787-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Burhanuddin Baharuddin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Belajar Web Development","language":"ms","gitbook":"*"},"file":{"path":"asas/run-projek.md","mtime":"2018-12-04T05:51:36.037Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-09T09:49:56.257Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"date":"2018-12-09T00:00:00.000Z","description":"Authorization ialah proses untuk memberi akses kepada ahli website. Kita akan menggunakan fungsi authorization daripada Spring Security.","title":"Authorization","level":"1.4.4","depth":2,"previous":{"title":"Authentication","level":"1.4.3","depth":2,"path":"springsecurity/authentication.md","ref":"springsecurity/authentication.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","pageload-analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sitemap-general":{"prefix":"https://www.jombelajarjava.com/webdevelopment/"},"pageload-analytics":{"token":"UA-64328787-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Burhanuddin Baharuddin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Belajar Web Development","language":"ms","gitbook":"*"},"file":{"path":"springsecurity/authorization.md","mtime":"2018-12-09T09:49:37.891Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-09T09:49:56.257Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

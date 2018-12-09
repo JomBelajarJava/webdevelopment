@@ -1,0 +1,637 @@
+
+<!DOCTYPE HTML>
+<html lang="ms" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Authentication · Belajar Web Development</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Authentication ialah proses untuk mengesahkan identiti username dan password pengguna. Kita akan menggunakan Spring Security untuk authentication.">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Burhanuddin Baharuddin">
+        
+        
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+     a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+     a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-64328787-1', 'auto');
+</script>
+
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="authorization.html" />
+    
+    
+    <link rel="prev" href="csrf.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Taip untuk search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Pengenalan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../asas/">
+            
+                <a href="../asas/">
+            
+                    
+                    Asas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../asas/setup-projek.html">
+            
+                <a href="../asas/setup-projek.html">
+            
+                    
+                    Setup Projek
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../asas/run-projek.html">
+            
+                <a href="../asas/run-projek.html">
+            
+                    
+                    Run Projek
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../asas/controller.html">
+            
+                <a href="../asas/controller.html">
+            
+                    
+                    Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../asas/routing.html">
+            
+                <a href="../asas/routing.html">
+            
+                    
+                    Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../asas/request.html">
+            
+                <a href="../asas/request.html">
+            
+                    
+                    Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../asas/response.html">
+            
+                <a href="../asas/response.html">
+            
+                    
+                    Response
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../asas/autowire.html">
+            
+                <a href="../asas/autowire.html">
+            
+                    
+                    Autowire
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../springmvc/">
+            
+                <a href="../springmvc/">
+            
+                    
+                    Spring MVC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../springmvc/template-engine.html">
+            
+                <a href="../springmvc/template-engine.html">
+            
+                    
+                    Template Engine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../springmvc/controller-mvc.html">
+            
+                <a href="../springmvc/controller-mvc.html">
+            
+                    
+                    Controller MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../springmvc/model.html">
+            
+                <a href="../springmvc/model.html">
+            
+                    
+                    Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../springmvc/mustache.html">
+            
+                <a href="../springmvc/mustache.html">
+            
+                    
+                    Mustache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../springmvc/form.html">
+            
+                <a href="../springmvc/form.html">
+            
+                    
+                    Form
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../springmvc/redirect.html">
+            
+                <a href="../springmvc/redirect.html">
+            
+                    
+                    Redirect
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Spring Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="password-hashing.html">
+            
+                <a href="password-hashing.html">
+            
+                    
+                    Password Hashing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="csrf.html">
+            
+                <a href="csrf.html">
+            
+                    
+                    CSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="authentication.html">
+            
+                <a href="authentication.html">
+            
+                    
+                    Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="authorization.html">
+            
+                <a href="authorization.html">
+            
+                    
+                    Authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Diterbitkan oleh GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Authentication</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="authentication">Authentication</h1>
+<p>Authentication ialah proses untuk mengesahkan identiti username dan password
+pengguna. Sebelum kita melihat proses authentication, kita lihat maksud cookie
+dan session terlebih dahulu.</p>
+<p>Cookie ialah data yang dihantar oleh website dan boleh disimpan dalam web
+browser pengguna. Website hanyalah seperti aplikasi biasa, jadi website
+memerlukan cookie untuk mengenalpasti siapakah pengguna yang sedang
+berinteraksi. Cookie yang digunakan untuk mengenalpasti identiti ini disebut
+sebagai session.</p>
+<p>Jadi, secara teorinya, semasa log in, setelah submit form, website akan mencari
+pengguna menggunakan username, kemudian menggunakan cryptography untuk
+mengesahkan password. Jika sama, website akan meletakkan session pada web
+browser. Untuk semua request yang seterusnya, website hanya perlu melihat
+session tersebut untuk mengenali siapa pengguna, maka pengguna tidak perlu lagi
+log in berulang kali.</p>
+<p>Anda boleh menulis sendiri code untuk membuat authentication jika anda mahu.
+Untuk tutorial ini, kita akan terus menggunakan Spring Security untuk membuat
+authentication.</p>
+<p>Dalam <a href="csrf.html">tutorial CSRF</a>, kita telah membuat class <code>WebSecurityConfig</code>.
+Kita boleh menambah configuration dalam class tersebut untuk authentication.
+Caranya dengan override method <code>configure()</code>, seperti berikut:</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Configuration</span>
+<span class="hljs-meta">@EnableWebSecurity</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WebSecurityConfig</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WebSecurityConfigurerAdapter</span> </span>{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configure</span><span class="hljs-params">(HttpSecurity http)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        http
+                .formLogin()
+                .loginPage(<span class="hljs-string">&quot;/login&quot;</span>)
+                .defaultSuccessUrl(<span class="hljs-string">&quot;/dashboard&quot;</span>)
+                .and()
+                .logout();
+    }
+}
+</code></pre>
+<p>Method dalam <code>HttpSecurity</code> adalah berangkai, sama seperti design pattern
+Builder, jadi kita ikut sahaja.</p>
+<p>Untuk code di atas, kita configure login dengan memanggil method <code>formLogin()</code>
+kemudian kita menetapkan url untuk page login dan url untuk redirect setelah
+berjaya login. Kemudian, kita memanggil method <code>and()</code> untuk configure bahagian
+lain dan kita memasang fungsi logout dengan memanggil method <code>logout()</code>.</p>
+<p>Setelah selesai, kita override satu lagi method, iaitu <code>userDetailsService()</code>
+dalam class yang sama. Method ini adalah untuk kita beritahu Spring Security,
+service mana yang perlu digunakan untuk mencari maklumat pengguna. Disebabkan
+kita tidak menggunakan database, kita boleh meletakkan pengguna sebagai demo
+terlebih dahulu.</p>
+<p>Sebelum itu, kita inject class untuk password hashing terlebih dahulu kerana
+kita perlu hash password untuk pengguna demo:</p>
+<pre><code class="lang-java">    <span class="hljs-keyword">private</span> PasswordEncoder passwordEncoder;
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">WebSecurityConfig</span><span class="hljs-params">(PasswordEncoder passwordEncoder)</span> </span>{
+        <span class="hljs-keyword">this</span>.passwordEncoder = passwordEncoder;
+    }
+</code></pre>
+<p>Method <code>userDetailsService()</code> adalah seperti berikut:</p>
+<pre><code class="lang-java">    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> UserDetailsService <span class="hljs-title">userDetailsService</span><span class="hljs-params">()</span> </span>{
+        UserDetails admin =
+                User.withUsername(<span class="hljs-string">&quot;admin&quot;</span>)
+                        .password(<span class="hljs-string">&quot;admin&quot;</span>)
+                        .roles(<span class="hljs-string">&quot;ADMIN&quot;</span>)
+                        .passwordEncoder(passwordEncoder::encode)
+                        .build();
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> InMemoryUserDetailsManager(admin);
+    }
+</code></pre>
+<p>Ini bermakna user tersebut hanya ada dalam memory.</p>
+<p>Code <code>passwordEncoder::encode</code> di atas adalah syntax Java 8. Jika anda
+menggunakan Java 7, anda boleh menggunakan anonymous class seperti ini:</p>
+<pre><code class="lang-java">                        ...
+                        .passwordEncoder(<span class="hljs-keyword">new</span> Function&lt;String, String&gt;() {
+                            <span class="hljs-meta">@Override</span>
+                            <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">apply</span><span class="hljs-params">(String rawPassword)</span> </span>{
+                                <span class="hljs-keyword">return</span> passwordEncoder.encode(rawPassword);
+                            }
+                        })
+                        ...
+</code></pre>
+<p>Sekarang sudah selesai, anda boleh test login sekarang. Jika berjaya, anda akan
+ke page dashboard, jika tidak anda akan ke page login semula.</p>
+<p>Jika anda perhatikan link di web browser, semasa gagal login, link akan bertukar
+menjadi <code>localhost:8080/login?error</code>. Jadi, anda boleh check parameter <code>error</code>.
+Jika ada nilai, kita boleh memaparkan message error pada page login.</p>
+<p>Anda boleh menambah form untuk logout seperti berikut dalam page dashboard:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/logout&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;POST&quot;</span>&gt;</span>
+  {{&gt; anti_forgery_field}}
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Logout&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<h2 id="mendapatkan-maklumat-pengguna">Mendapatkan maklumat pengguna</h2>
+<p>Kita boleh mendapatkan maklumat pengguna dalam controller. Contoh jika kita
+ingin memaparkan username dalam page dashboard,</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Selamat datang ke Dashboard, {{username}}!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>Untuk mendapatkan maklumat pengguna, tambah parameter untuk <code>Principal</code> pada
+method controller, seperti berikut,</p>
+<pre><code class="lang-java">    <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/dashboard&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">dashboard</span><span class="hljs-params">(Principal principal, Model model)</span> </span>{
+        model.addAttribute(<span class="hljs-string">&quot;username&quot;</span>, principal.getName());
+        <span class="hljs-keyword">return</span> render(model, <span class="hljs-string">&quot;dashboard&quot;</span>, <span class="hljs-string">&quot;Dashboard&quot;</span>);
+    }
+</code></pre>
+<p>Satu lagi penambahbaikan yang kita boleh buat menggunakan <code>Principal</code> adalah
+redirect pengguna terus ke dashboard jika mereka telah login, seperti berikut,</p>
+<pre><code class="lang-java">    <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/login&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">login</span><span class="hljs-params">(Principal principal, Model model)</span> </span>{
+        <span class="hljs-keyword">if</span> (principal == <span class="hljs-keyword">null</span>) {  <span class="hljs-comment">// jika belum log in</span>
+            <span class="hljs-keyword">return</span> render(model, <span class="hljs-string">&quot;login&quot;</span>, <span class="hljs-string">&quot;Log In&quot;</span>);
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;redirect:/dashboard&quot;</span>;
+    }
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> carian untuk "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">Tiada hasil carian untuk "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="csrf.html" class="navigation navigation-prev " aria-label="Previous page: CSRF">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="authorization.html" class="navigation navigation-next " aria-label="Next page: Authorization">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"date":"2018-12-09T00:00:00.000Z","description":"Authentication ialah proses untuk mengesahkan identiti username dan password pengguna. Kita akan menggunakan Spring Security untuk authentication.","title":"Authentication","level":"1.4.3","depth":2,"next":{"title":"Authorization","level":"1.4.4","depth":2,"path":"springsecurity/authorization.md","ref":"springsecurity/authorization.md","articles":[]},"previous":{"title":"CSRF","level":"1.4.2","depth":2,"path":"springsecurity/csrf.md","ref":"springsecurity/csrf.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","pageload-analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sitemap-general":{"prefix":"https://www.jombelajarjava.com/webdevelopment/"},"pageload-analytics":{"token":"UA-64328787-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Burhanuddin Baharuddin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Belajar Web Development","language":"ms","gitbook":"*"},"file":{"path":"springsecurity/authentication.md","mtime":"2018-12-09T09:49:37.891Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-09T09:49:56.257Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageload-analytics/track.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
