@@ -24,8 +24,7 @@ authentication. Kita tambah seperti berikut:
                 .logout()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/dashboard/**").authenticated()
-                .antMatchers("/admin/**").hasRole("ADMIN");
+                .antMatchers("/dashboard/**").authenticated();
     }
 ```
 
