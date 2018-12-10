@@ -102,7 +102,9 @@ public class CsrfTokenInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response,
                            Object handler, ModelAndView modelAndView) throws Exception {
         CsrfToken csrfToken = (CsrfToken) request.getAttribute("_csrf");
-        modelAndView.addObject("_csrf", csrfToken);
+        if (modelAndView != null) {
+            modelAndView.addObject("_csrf", csrfToken);
+        }
     }
 }
 ```
