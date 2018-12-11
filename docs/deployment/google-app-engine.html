@@ -526,6 +526,14 @@ standard</a>.</p>
  <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span>
 </code></pre>
 </li>
+<li><p>Tambah dependency Tomcat, dan tukar scope ke <code>provided</code>:</p>
+<pre><code class="lang-xml">     <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-tomcat<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>provided<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+     <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+</li>
 <li><p>Tambah plugin untuk <code>appengine-maven-plugin</code>:</p>
 <pre><code class="lang-xml">     <span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span>
          ...
@@ -540,38 +548,29 @@ standard</a>.</p>
 <li><p>Bina file <code>src/main/webapp/WEB-INF/appengine-web.xml</code> dengan kandungan:</p>
 <pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
 <span class="hljs-tag">&lt;<span class="hljs-name">appengine-web-app</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://appengine.google.com/ns/1.0&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">threadsafe</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">threadsafe</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">runtime</span>&gt;</span>java8<span class="hljs-tag">&lt;/<span class="hljs-name">runtime</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">sessions-enabled</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">sessions-enabled</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">appengine-web-app</span>&gt;</span>
 </code></pre>
 </li>
+<li><p>Bina class <code>ServletInitializer</code> dengan kandungan:</p>
+</li>
 </ol>
-<hr>
-<p>Setelah deploy, saya cuba melayari website, tetapi tidak boleh membuka page
-login kerana ada masalah untuk generate token CSRF. Apa yang saya buat, saya
-tukar implementation token tersebut daripada session ke cookie. Kalau mahu lebih
-senang, disable terus CSRF di <code>WebSecurityConfig</code>:</p>
-<pre><code class="lang-java">    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configure</span><span class="hljs-params">(HttpSecurity http)</span> <span class="hljs-keyword">throws</span> Exception </span>{
-        http
-                .csrf().disable()
-                .formLogin()
-                ...
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.jombelajarjava.hello;
+
+<span class="hljs-keyword">import</span> org.springframework.boot.builder.SpringApplicationBuilder;
+<span class="hljs-keyword">import</span> org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ServletInitializer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">SpringBootServletInitializer</span> </span>{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> SpringApplicationBuilder <span class="hljs-title">configure</span><span class="hljs-params">(SpringApplicationBuilder builder)</span> </span>{
+        <span class="hljs-keyword">return</span> builder.sources(HelloApplication.class);
     }
+}
 </code></pre>
-<p>Setelah login di page login, website sekali lagi menunjukkan error yang
-melibatkan session. Maksudnya pengendalian session yang default daripada Spring
-Security mungkin tidak sesuai dengan GAE. Puas juga saya mencari jika ada orang
-yang pernah membuat benda yang sama, tidak jumpa.</p>
-<p>Berikut ialah documentation untuk pilihan authentication yang kita boleh guna di
-GAE:</p>
-<p><a href="https://cloud.google.com/appengine/docs/standard/python/oauth/" target="_blank">User Authentication
-Options</a></p>
-<p>Kesimpulannya, GAE sesuai untuk Spring Boot jika kita hanya menggunakan Spring
-MVC. GAE juga mungkin sesuai untuk backend server kepada aplikasi mobile, atau
-bot.</p>
+<p>Setelah deploy, kita boleh melayari website kita.</p>
+<p><img src="img/gae.png" alt="Gambar deployment di Google App Engine"></p>
 
                                 
                                 </section>
@@ -611,7 +610,7 @@ bot.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"date":"2018-12-11T00:00:00.000Z","description":"GAE adalah sebahagian daripada Google Cloud Platform. Google Cloud Platform terbahagi kepada dua, iaitu Flexible dan Standard.","title":"Google App Engine","level":"1.5.3","depth":2,"previous":{"title":"PaaS","level":"1.5.2","depth":2,"path":"deployment/paas.md","ref":"deployment/paas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","pageload-analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sitemap-general":{"prefix":"https://www.jombelajarjava.com/webdevelopment/"},"pageload-analytics":{"token":"UA-64328787-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Burhanuddin Baharuddin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Belajar Web Development","language":"ms","gitbook":"*"},"file":{"path":"deployment/google-app-engine.md","mtime":"2018-12-11T07:20:49.770Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-11T20:32:44.251Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"date":"2018-12-11T00:00:00.000Z","description":"GAE adalah sebahagian daripada Google Cloud Platform. Google Cloud Platform terbahagi kepada dua, iaitu Flexible dan Standard.","title":"Google App Engine","level":"1.5.3","depth":2,"previous":{"title":"PaaS","level":"1.5.2","depth":2,"path":"deployment/paas.md","ref":"deployment/paas.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","pageload-analytics"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sitemap-general":{"prefix":"https://www.jombelajarjava.com/webdevelopment/"},"pageload-analytics":{"token":"UA-64328787-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Burhanuddin Baharuddin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Belajar Web Development","language":"ms","gitbook":"*"},"file":{"path":"deployment/google-app-engine.md","mtime":"2018-12-11T23:52:57.812Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-11T23:53:56.175Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
