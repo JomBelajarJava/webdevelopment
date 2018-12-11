@@ -38,6 +38,7 @@ ialah menyewa server di mana-mana server hosting.
 
 Antara server hosting yang popular ialah:
 
+- [Amazon EC2](https://aws.amazon.com/ec2/)
 - [DigitalOcean](https://www.digitalocean.com/)
 - [Linode](https://www.linode.com/)
 - [OVH](https://www.ovh.com/world/) (EU)
