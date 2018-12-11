@@ -31,7 +31,8 @@ public class GreetingController {
 }
 ```
 
-Kita boleh pergi ke `localhost:8080/nama` untuk pergi ke route tersebut.
+Kita boleh pergi ke [http://localhost:8080/nama](http://localhost:8080/nama)
+untuk pergi ke route tersebut.
 
 Untuk membuat route yang menggunakan HTTP method `POST`, kita boleh menggunakan
 annotation `@PostMapping`, contohnya,

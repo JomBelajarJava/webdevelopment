@@ -109,8 +109,9 @@ Sekarang sudah selesai, anda boleh test login sekarang. Jika berjaya, anda akan
 ke page dashboard, jika tidak anda akan ke page login semula.
 
 Jika anda perhatikan link di web browser, semasa gagal login, link akan bertukar
-menjadi `localhost:8080/login?error`. Jadi, anda boleh check parameter `error`.
-Jika ada nilai, kita boleh memaparkan message error pada page login.
+menjadi [http://localhost:8080/login?error](http://localhost:8080/login?error).
+Jadi, anda boleh check parameter `error`. Jika ada nilai, kita boleh memaparkan
+message error pada page login.
 
 Anda boleh menambah form untuk logout seperti berikut dalam page dashboard:
 

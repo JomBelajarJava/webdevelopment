@@ -117,4 +117,5 @@ public class GreetingController {
 ```
 
 Sekarang kita sudah boleh test code dengan melayari
-`localhost:8080/enter?name=Muhammad Ali` di browser.
+[http://localhost:8080/enter?name=Muhammad
+Ali](http://localhost:8080/enter?name=Muhammad Ali) di browser.

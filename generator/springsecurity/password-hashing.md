@@ -68,7 +68,8 @@ public class TestController {
 }
 ```
 
-Setelah selesai, layari `localhost:8080/test`. Hasilnya,
+Setelah selesai, layari
+[http://localhost:8080/test](http://localhost:8080/test). Hasilnya,
 
 ![Gambar result hash](img/hashed.png)
 

@@ -43,7 +43,7 @@ berikut,
 </html>
 ```
 
-Layari `localhost:8080` untuk test controller.
+Layari [http://localhost:8080](http://localhost:8080) untuk test controller.
 
 Parameter yang lain boleh sahaja ditambah pada method tersebut, contohnya jika
 kita ingin mengambil parameter, seperti berikut,
@@ -56,4 +56,5 @@ kita ingin mengambil parameter, seperti berikut,
     }
 ```
 
-Layari `localhost:8080/?name=Mike Tyson` untuk test method tersebut.
+Layari [http://localhost:8080/?name=Mike Tyson](http://localhost:8080/?name=Mike
+Tyson) untuk test method tersebut.

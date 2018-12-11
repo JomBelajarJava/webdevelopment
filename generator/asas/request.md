@@ -20,7 +20,8 @@ Kita boleh mendapatkan maklumat mengenai link menggunakan annotation
     }
 ```
 
-Pergi ke `localhost:8080/page/10` di browser untuk melihat hasilnya.
+Pergi ke [http://localhost:8080/page/10](http://localhost:8080/page/10) di
+browser untuk melihat hasilnya.
 
 ## Request parameter
 
@@ -38,7 +39,7 @@ Sekarang route tersebut memerlukan parameter daripada pengguna. Contoh untuk
 menghantar request parameter adalah dengan menaip di browser seperti berikut:
 
 ```
-localhost:8080/nama?name=Muhammad Ali
+http://localhost:8080/nama?name=Muhammad Ali
 ```
 
 Kemudian server akan menjawab,

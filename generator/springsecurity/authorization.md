@@ -37,7 +37,8 @@ untuk path tersebut menandakan hanya pengguna yang login sahaja yang boleh
 akses.
 
 Setelah selesai, anda boleh cuba logout, kemudian layari
-`localhost:8080/dashboard` dan website akan redirect anda ke page login.
+[https://localhost:8080/dashboard](https://localhost:8080/dashboard) dan website
+akan redirect anda ke page login.
 
 ## Role
 
@@ -88,6 +89,7 @@ menggunakan `antMatchers()` kemudian guna method `hasRole()`, seperti berikut:
 ```
 
 Setelah selesai, cuba login sebagai pengguna biasa, dan layari
-`localhost:8080/admin` dan page akan memaparkan '*forbidden*'.
+[http://localhost:8080/admin](http://localhost:8080/admin) dan page akan
+memaparkan '*forbidden*'.
 
 Pengguna juga boleh memiliki lebih daripada satu role.

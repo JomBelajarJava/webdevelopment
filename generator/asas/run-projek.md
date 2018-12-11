@@ -28,8 +28,8 @@ Tomcat initialized with port(s): 8080 (http)
 
 Perhatikan nombor 8080 tersebut. Itu merupakan port untuk server yang kita telah
 run. Untuk melihat web tersebut, buka browser kemudian pergi ke
-`localhost:8080`. Anda akan melihat error page kerana kita masih belum menulis
-apa-apa lagi.
+[http://localhost:8080](http://localhost:8080). Anda akan melihat error page
+kerana kita masih belum menulis apa-apa lagi.
 
 Jika anda masih ingat, sebelum ini kita anda menambah dependency 'Devtools'.
 Dengan adanya Devtools, code yang kita akan tulis nanti akan terus update pada

@@ -51,5 +51,6 @@ documentation):
 </html>
 ```
 
-Run program tersebut, kemudian layari `localhost:8080` untuk melihat page
-website tersebut.
+Run program tersebut, kemudian layari
+[http://localhost:8080](http://localhost:8080) untuk melihat page website
+tersebut.
