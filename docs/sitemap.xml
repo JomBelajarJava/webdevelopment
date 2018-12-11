@@ -21,4 +21,8 @@
 <url> <loc>https://www.jombelajarjava.com/webdevelopment/springsecurity/csrf.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jombelajarjava.com/webdevelopment/springsecurity/authentication.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jombelajarjava.com/webdevelopment/springsecurity/authorization.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jombelajarjava.com/webdevelopment/deployment/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jombelajarjava.com/webdevelopment/deployment/uberjar.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jombelajarjava.com/webdevelopment/deployment/paas.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jombelajarjava.com/webdevelopment/deployment/google-app-engine.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
