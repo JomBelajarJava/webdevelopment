@@ -1,0 +1,43 @@
+chapters:
+  - url: pengenalan
+    title: Pengenalan
+  - url: asas
+    title: Bab 1 - Asas
+  - url: springmvc
+    title: Bab 2 - Spring MVC
+  - url: springsecurity
+    title: Bab 3 - Spring Security
+  - url: deployment
+    title: Bab 4 - Deployment
+
+asas:
+  - url: setup-projek
+  - url: run-projek
+  - url: controller
+  - url: routing
+  - url: request
+  - url: response
+  - url: autowire
+
+springmvc:
+  - url: template-engine
+  - url: controller-mvc
+    title: Controller MVC
+  - url: model
+  - url: mustache
+  - url: form
+  - url: redirect
+
+springsecurity:
+  - url: password-hashing
+  - url: csrf
+    title: CSRF
+  - url: authentication
+  - url: authorization
+
+deployment:
+  - url: uberjar
+  - url: paas
+    title: PaaS
+  - url: google-app-engine
+    title: Google App Engine
