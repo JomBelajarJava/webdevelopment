@@ -52,10 +52,10 @@ Framework Spring Security hanyalah sebuah library. Maka, mudah sahaja. Tambah
 dependency tersebut dalam file `pom.xml`:
 
 ```xml
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
 ```
 
 Anda juga boleh menggunakan [Spring Initializr](https://start.spring.io/) untuk
