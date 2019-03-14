@@ -47,9 +47,11 @@ test. Contoh,
 
 File `test.mustache`:
 
+{% raw %}
 ```html
 <p>Result: {{result}}</p>
 ```
+{% endraw %}
 
 File `TestController.java`:
 
