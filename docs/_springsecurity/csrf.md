@@ -16,8 +16,7 @@ wang ke akaun penjenayah. Jika website bank tidak mencegah CSRF, website
 tersebut tidak boleh tahu sama ada pemindahan wang tersebut adalah kehendak
 mangsa ataupun tidak, kerana mangsa telah log in.
 
-Anda boleh baca dengan lebih lanjut di [website
-OWASP](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF%29).
+Anda boleh baca dengan lebih lanjut di [website OWASP][owasp].
 
 Bagi mengatasi masalah ini, satu cara adalah dengan meletakkan token pada
 sesuatu form. Apabila pengguna submit form tersebut, website akan check sama ada
@@ -51,15 +50,18 @@ maka kita perlu menghantar token tersebut menggunakan model.
 Berikut ialah template untuk meletakkan token dalam file
 `anti_forgery_field.mustache`:
 
+{% raw %}
 ```html
 {{#_csrf}}
   <input type="hidden" name="{{parameterName}}" value="{{token}}">
 {{/_csrf}}
 ```
+{% endraw %}
 
 Kemudian kita boleh menggunakan partial untuk memasukkan template tersebut ke
 dalam setiap form, seperti berikut:
 
+{% raw %}
 ```html
 <form action="/login" method="POST">
   {{> anti_forgery_field}}
@@ -68,6 +70,7 @@ dalam setiap form, seperti berikut:
   <p><input type="submit" value="Log In"></p>
 </form>
 ```
+{% endraw %}
 
 Untuk mendapatkan token, kita boleh menambah parameter untuk `CsrfToken` pada
 method controller kita, seperti berikut:
@@ -153,3 +156,5 @@ Sekarang, kita sudah boleh edit controller ke bentuk asal, seperti berikut:
         return render(model, "login", "Log In");
     }
 ```
+
+[owasp]: https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
