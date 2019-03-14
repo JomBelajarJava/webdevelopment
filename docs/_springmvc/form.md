@@ -49,6 +49,7 @@ Untuk test controller, kita bina satu page untuk memaparkan username.
 
 Edit `page.mustache` untuk page dashboard:
 
+{% raw %}
 ```html
     ...
     {{#home}}{{> home}}{{/home}}
@@ -56,9 +57,11 @@ Edit `page.mustache` untuk page dashboard:
     {{#dashboard}}{{> dashboard}}{{/dashboard}}
     ...
 ```
+{% endraw %}
 
 kemudian, bina file `dashboard.mustache`:
 
+{% raw %}
 ```html
 {{#success}}
   <p>Selamat datang, {{username}}!</p>
@@ -67,6 +70,7 @@ kemudian, bina file `dashboard.mustache`:
   <p>Maaf, password tak betul.</p>
 {{/success}}
 ```
+{% endraw %}
 
 Akhir sekali, edit method `authenticate()` untuk menghantar data yang
 diperlukan:
