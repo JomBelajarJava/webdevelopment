@@ -95,14 +95,14 @@ Code `passwordEncoder::encode` di atas adalah syntax Java 8. Jika anda
 menggunakan Java 7, anda boleh menggunakan anonymous class seperti ini:
 
 ```java
-                        ...
-                        .passwordEncoder(new Function<String, String>() {
-                            @Override
-                            public String apply(String rawPassword) {
-                                return passwordEncoder.encode(rawPassword);
-                            }
-                        })
-                        ...
+        ...
+        .passwordEncoder(new Function<String, String>() {
+            @Override
+            public String apply(String rawPassword) {
+                return passwordEncoder.encode(rawPassword);
+            }
+        })
+        ...
 ```
 
 Sekarang sudah selesai, anda boleh test login sekarang. Jika berjaya, anda akan
@@ -115,12 +115,14 @@ message error pada page login.
 
 Anda boleh menambah form untuk logout seperti berikut dalam page dashboard:
 
+{% raw %}
 ```html
 <form action="/logout" method="POST">
   {{> anti_forgery_field}}
   <input type="submit" value="Logout">
 </form>
 ```
+{% endraw %}
 
 ## Mendapatkan maklumat pengguna
 
