@@ -12,12 +12,14 @@ Sekarang kita akan melihat dengan lebih mendalam syntax template Mustache.
 Syntax untuk seksyen bermula dengan variable berserta tanda `#` pada nama,
 kemudian diakhiri dengan variable berserta tanda `/`, contohnya,
 
+{% raw %}
 ```html
 {{#title}}
   <h1>Website Hello</h1>
   <p>Website kegemaran anda</p>
 {{/title}}
 ```
+{% endraw %}
 
 Code HTML di atas bermakna jika kita ada menghantar apa-apa data ke `title`
 tidak kiralah jenis apa, contohnya,
@@ -32,15 +34,18 @@ maka bahagian tersebut akan terpapar. Syntax tersebut kita boleh baca seperti
 Lawan kepada syntax `#` ialah `^`. Kita boleh baca seperti **if not title**.
 Contoh,
 
+{% raw %}
 ```html
 {{^title}}
   <p>Hmmm, tiada tajuk</p>
 {{/title}}
 ```
+{% endraw %}
 
 Menggunakan kedua-dua syntax tersebut, kita boleh membuat sesuatu seperti **if
 else**. Contoh,
 
+{% raw %}
 ```html
 {{#title}}
   <h1>Website Hello &middot; {{title}}</h1>
@@ -49,6 +54,7 @@ else**. Contoh,
   <h1>Website Hello</h1>
 {{/title}}
 ```
+{% endraw %}
 
 Code di atas bermaksud kita paparkan tajuk website berserta tajuk kecil yang
 kita masukkan daripada code Java. Jika kita tidak meletakkan tajuk kecil,
@@ -63,6 +69,7 @@ data dalam array atau list.
 
 Contoh,
 
+{% raw %}
 ```html
 <p>
   Kucing saya:
@@ -73,6 +80,7 @@ Contoh,
   </ul>
 </p>
 ```
+{% endraw %}
 
 Dengan menggunakan code Java seperti ini,
 
@@ -120,6 +128,7 @@ model.addAttribute("kucing", new Kucing("Maru", "Parsi"));
 
 maka, kita boleh membuat seperti berikut untuk mendapatkan nama dan jenis kucing:
 
+{% raw %}
 ```html
 <p>
   {{#kucing}}
@@ -127,6 +136,7 @@ maka, kita boleh membuat seperti berikut untuk mendapatkan nama dan jenis kucing
   {{/kucing}}
 </p>
 ```
+{% endraw %}
 
 Kita juga boleh menghantar beberapa object dalam array atau list, dan syntax
 yang sama akan sama mengulang untuk semua object sambil mengambil data dalam
@@ -138,14 +148,16 @@ Partial bermaksud sebahagian. Dalam Mustache, partial bermaksud syntax untuk
 memasukkan sebahagian HTML daripada file yang lain. Syntax tersebut bermula
 dengan `>` kemudian nama file yang ingin kita masukkan.
 
-Katakanlah kita ada file `login.mustache`, maka kita boleh menggunakan `{{>
-login}}` untuk memasukkan semua kandungan daripada file `login.mustache`.
+Katakanlah kita ada file `login.mustache`, maka kita boleh menggunakan {% raw
+%}`{{> login}}`{% endraw %} untuk memasukkan semua kandungan daripada file
+`login.mustache`.
 
 Dengan menggunakan syntax partial dan seksyen, kita boleh memilih kandungan page
 tanpa menulis semula bahagian HTML yang lain, contohnya,
 
 File `page.mustache`:
 
+{% raw %}
 ```html
 <!DOCTYPE html>
 <html>
@@ -162,6 +174,7 @@ File `page.mustache`:
   </body>
 </html>
 ```
+{% endraw %}
 
 File `home.mustache`:
 
