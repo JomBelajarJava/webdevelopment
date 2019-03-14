@@ -27,8 +27,8 @@ public class GreetingController {
 ```
 
 Kita boleh menggunakan syntax template untuk memaparkan data tersebut. Contoh
-untuk template Mustache adalah dengan menggunakan `{{` dan `}}`, seperti
-berikut,
+untuk template Mustache adalah dengan menggunakan {% raw %}`{{` dan `}}`{%
+endraw %}, seperti berikut,
 
 ```html
 <!DOCTYPE html>
