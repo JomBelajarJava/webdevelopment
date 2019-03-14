@@ -129,9 +129,11 @@ Anda boleh menambah form untuk logout seperti berikut dalam page dashboard:
 Kita boleh mendapatkan maklumat pengguna dalam controller. Contoh jika kita
 ingin memaparkan username dalam page dashboard,
 
+{% raw %}
 ```html
 <p>Selamat datang ke Dashboard, {{username}}!</p>
 ```
+{% endraw %}
 
 Untuk mendapatkan maklumat pengguna, tambah parameter untuk `Principal` pada
 method controller, seperti berikut,
