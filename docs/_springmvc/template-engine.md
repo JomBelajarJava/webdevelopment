@@ -36,10 +36,10 @@ template engine yang lain.
 Untuk menggunakan Mustache, tambah dependency berikut pada file `pom.xml`:
 
 ```xml
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mustache</artifactId>
-		</dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-mustache</artifactId>
+    </dependency>
 ```
 
 Anda juga boleh menggunakan [Spring Initializr](https://start.spring.io/) untuk
