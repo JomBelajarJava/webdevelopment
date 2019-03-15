@@ -1,5 +1,6 @@
 ---
 permalink: /:collection/
+title: Asas
 ---
 
 # Asas

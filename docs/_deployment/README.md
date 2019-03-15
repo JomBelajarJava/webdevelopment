@@ -1,5 +1,6 @@
 ---
 permalink: /:collection/
+title: Deployment
 description: Dalam bab ini, kita akan melihat antara pilihan yang kita boleh gunakan untuk menjadikan website Spring Boot boleh diakses oleh khalayak ramai.
 ---
 

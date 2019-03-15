@@ -1,5 +1,6 @@
 ---
 permalink: /:collection/
+title: Spring MVC
 description: Dalam bab ini, kita akan melihat feature Spring MVC untuk membuat website yang biasa kita lihat di internet.
 ---
 

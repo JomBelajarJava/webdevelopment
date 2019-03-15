@@ -1,5 +1,6 @@
 ---
 permalink: /:collection/
+title: Spring Security
 description: Spring Security ialah framework yang memberi kemudahan seperti password encryption, authentication, authorization, dan lain-lain.
 ---
 

@@ -1,5 +1,6 @@
 ---
 permalink: /:collection/
+title: Pengenalan
 description: Belajar web development menggunakan Spring Boot, framework yang paling popular dalam Java.
 ---
 
