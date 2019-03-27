@@ -30,6 +30,7 @@ Kita boleh menggunakan syntax template untuk memaparkan data tersebut. Contoh
 untuk template Mustache adalah dengan menggunakan {% raw %}`{{` dan `}}`{%
 endraw %}, seperti berikut,
 
+{% raw %}
 ```html
 <!DOCTYPE html>
 <html>
@@ -42,6 +43,7 @@ endraw %}, seperti berikut,
   </body>
 </html>
 ```
+{% endraw %}
 
 Layari [http://localhost:8080](http://localhost:8080) untuk test controller.
 

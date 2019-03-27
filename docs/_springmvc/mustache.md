@@ -104,9 +104,9 @@ template tersebut akan berkembang menjadi,
 ## Fields object
 
 Contoh di atas menggunakan keyword `this`, yang juga merupakan keyword yang kita
-pernah guna dalam object-oriented programming. Ya, kita juga boleh menggunakan
-syntax `#` untuk merujuk fields dalam sesuatu object. Katakanlah kita ada
-membuat class Kucing,
+pernah guna dalam object-oriented programming. Ini bermakna kita juga boleh
+menggunakan syntax `#` untuk merujuk fields dalam sesuatu object. Katakanlah
+kita ada membuat class Kucing,
 
 ```java
 class Kucing {
